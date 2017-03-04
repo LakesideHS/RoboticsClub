@@ -1,0 +1,47 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG "start timer..."
+DO
+  PULSOUT 13, 850
+  PULSOUT 12, 650
+
+
+PAUSE 1
+DEBUG CR, "One seconds elapsed..."
+
+  PULSOUT 13, 850
+  PULSOUT 12, 650
+
+PAUSE 2
+DEBUG CR, "Three seconds elapsed..."
+
+  PULSOUT 13, 850
+  PULSOUT 12, 650
+
+DEBUG CR, "Done."
+
+  PULSOUT 13, 850
+  PULSOUT 12, 650
+
+PAUSE 3
+DEBUG CR, "Four seconds elapsed..."
+
+  PULSOUT 13, 850
+  PULSOUT 12, 650
+
+PAUSE 4
+DEBUG CR, "Five seconds elapsed..."
+
+  PULSOUT 13, 850
+  PULSOUT 12, 650
+
+PAUSE 1
+DEBUG CR, "Six seconds elapsed..."
+
+  PULSOUT 13, 850
+  PULSOUT 12, 650
+
+DEBUG CR, "Done."
+
+LOOP

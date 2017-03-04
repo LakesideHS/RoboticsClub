@@ -1,0 +1,29 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+ freqSelect VAR Nib
+irFrequency VAR Word
+irDetect VAR Bit
+distance VAR Nib
+
+DEBUG CLS,
+" OBJECT", CR,
+"FREQUENCY DETECTED", CR,
+"--------- --------"
+
+DO
+distance = 0
+FOR freqSelect = 0 TO 4
+LOOKUP freqSelect,[37500,38250,39500,40500,41500], irFrequency
+FREQOUT 8,1, irFrequency
+irDetect = IN9
+distance = distance + irDetect
+DEBUG CRSRXY, 4, (freqSelect + 3), DEC5 irFrequency
+DEBUG CRSRXY, 11, freqSelect + 3
+IF (irDetect = 0) THEN DEBUG "Yes" ELSE DEBUG "No "
+PAUSE 100
+NEXT
+DEBUG CR,
+"--------- --------", CR,
+"Zone ", DEC1 distance
+LOOP
